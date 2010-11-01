@@ -1,0 +1,13 @@
+source "http://rubygems.org"
+
+gem "rails", "2.3.10"
+gem 'momomoto'
+gem "pg"
+gem "bluecloth"
+gem "shared-mime-info"
+gem "icalendar"
+gem "xmpp4r"
+gem "rmagick", "2.9.2" # current version of Lenny has old version of ImageMagick
+
+# other dependencies:
+#  rmagick libmagick9-dev postgres postgres-contrib
