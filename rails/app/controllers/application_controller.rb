@@ -46,27 +46,11 @@ class ApplicationController < ActionController::Base
     render :file => File.join( RAILS_ROOT, '/app/views/meditation.rhtml' )
   end
 
-  # extract authorization credentials from http header
-  def http_auth_data
-    ['X-HTTP_AUTHORIZATION','HTTP_AUTHORIZATION','REDIRECT_X_HTTP_AUTHORIZATION','Authorization'].each do | key |
-      if request.env.has_key?( key )
-        authdata = request.env[ key ].to_s.split
-        if authdata[0] == 'Basic'
-          user, pass = Base64.decode64(authdata[1]).split(':', 2)[0..1]
-          user = Iconv.iconv( 'UTF-8', 'iso-8859-1', user.to_s ).first
-          pass = Iconv.iconv( 'UTF-8', 'iso-8859-1', pass.to_s ).first
-          return user, pass
-        end
-        break
-      end
-    end
-    return '', ''
-  end
-
   def auth
-    user, pass = http_auth_data
-    POPE.auth( user, pass )
-    return check_permission
+    authenticate_or_request_with_http_basic do |user, pass|
+      POPE.auth( user, pass )
+      return check_permission
+    end
    rescue => e
     logger.warn( e.to_s ) unless e.class == Pope::NoUserData
     return false
