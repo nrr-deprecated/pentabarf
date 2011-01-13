@@ -33,7 +33,8 @@ class ApplicationController < ActionController::Base
         yield
       elsif not performed? then
         # if auth failed and nothing has been rendered we return 401
-        response.headers["Status"] = "Unauthorized"
+# This does not work with passenger!
+#        response.headers["Status"] = "Unauthorized"
         response.headers["WWW-Authenticate"] = "Basic realm=Pentabarf"
         render( :file=>'auth_failed.rxml',:status=>401,:content_type=>'text/html' )
       end
