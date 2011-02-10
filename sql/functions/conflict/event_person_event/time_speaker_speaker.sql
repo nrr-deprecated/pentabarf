@@ -2,9 +2,9 @@
 
 CREATE OR REPLACE FUNCTION conflict.conflict_event_person_event_time_speaker_speaker(integer) RETURNS SETOF conflict.conflict_event_person_event AS $$
   SELECT
-    ep1.person_id AS person_id,
     ep1.event_id AS event_id1,
-    ep2.event_id AS event_id2
+    ep2.event_id AS event_id2,
+    ep1.person_id AS person_id
   FROM
     event_person AS ep1
     INNER JOIN event AS e1 ON (
