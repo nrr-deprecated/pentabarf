@@ -1,4 +1,3 @@
-
 require 'RMagick'
 
 class ImageController < ApplicationController
@@ -18,7 +17,7 @@ class ImageController < ApplicationController
       end
       resolution = params[:size]
       response.headers['Content-Type'] = mimetype
-      response.headers['Last-Modified'] = @timestamp
+      response.headers['Last-Modified'] = @timestamp.to_s
       if mimetype == "image/svg+xml"
         render( :text => data )
       else
