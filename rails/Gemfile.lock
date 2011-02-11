@@ -1,0 +1,44 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (2.3.10)
+      actionpack (= 2.3.10)
+    actionpack (2.3.10)
+      activesupport (= 2.3.10)
+      rack (~> 1.1.0)
+    activerecord (2.3.10)
+      activesupport (= 2.3.10)
+    activeresource (2.3.10)
+      activesupport (= 2.3.10)
+    activesupport (2.3.10)
+    bluecloth (2.0.9)
+    icalendar (1.1.5)
+    momomoto (0.2.1)
+      postgres (>= 0.7.9.2008.01.09)
+    pg (0.9.0)
+    postgres (0.7.9.2008.01.28)
+    rack (1.1.0)
+    rails (2.3.10)
+      actionmailer (= 2.3.10)
+      actionpack (= 2.3.10)
+      activerecord (= 2.3.10)
+      activeresource (= 2.3.10)
+      activesupport (= 2.3.10)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    rmagick (2.9.2)
+    shared-mime-info (0.1)
+    xmpp4r (0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bluecloth
+  icalendar
+  momomoto
+  pg
+  rails (= 2.3.10)
+  rmagick (= 2.9.2)
+  shared-mime-info
+  xmpp4r
