@@ -22,7 +22,7 @@ xml.div({:id=>:data}) do
           end
           xml.td do xml << format_event( row ) end
           xml.td do
-            xml.a(row.resources,{:href=>url_for(:controller=>'event',:action=>:edit,:event_id=>row.event_id)})
+            xml.a(row.resources,{:style=>'white-space: pre-line',:href=>url_for(:controller=>'event',:action=>:edit,:event_id=>row.event_id)})
           end
         end
       end
