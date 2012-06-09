@@ -52,7 +52,7 @@ class UserController < ApplicationController
       raise "There is no user with this login name('#{params[:login_name]}')."
     end
     reset = Account_password_reset.select(:account_id=>p.account_id)
-    if reset.length == 1 && reset[0].password_reset > DateTime.now - 1
+    if reset.length == 1 && reset[0].reset_time > DateTime.now - 1
       raise "You have been sent a reset link recently."
     end
     activation_string = random_string
