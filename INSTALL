@@ -331,29 +331,7 @@ This should generate the following if all is well.
 Every time you want to start Pentabarf you will need to run the above 
 command first.
 
-The final command is still from within the rails directory of pentabarf.
-
-	script/server
-
-Now you should have just watch Pentabarf start up, a successful start 
-looks a little like the following.
-
-	=> Booting Mongrel
-	=> Rails 2.3.10 application starting on http://0.0.0.0:3000
-	=> Call with -d to detach
-	=> Ctrl-C to shutdown server
-
-
-NOTE:	If you close the terminal that you started pentabarf from then
-	you kill pentabarf too.
-
-
-Now you should finally be able to try accessing Pentabarf via one of
-the following from the local machine.
-
-	http://0.0.0.0:3000	(user:pentabarf pass:pentabarf)
-	http://localhost:3000	(user:pentabarf pass:pentabarf)
-	http://127.0.0.1:3000	(user:pentabarf pass:pentabarf)
+Now you should finally be able to try accessing Pentabarf via port 80 using apache.
 
 
 ---------------------
